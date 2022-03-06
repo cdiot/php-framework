@@ -1,0 +1,21 @@
+{% extends 'layouts/app.html.twig' %}
+
+{% block title %}Homepage {{ parent() }}
+{% endblock %}
+
+{% block content %}
+
+
+	<!-- Presentation -->
+	<div class="col-9">
+		<section>
+			<h1>Welcome to PHP-Framework 1.0.0</h1>
+			<p>Your application is now ready and you can start working on it, by default a set of demo pages are available, you are free to remove them from
+				<b>
+					<i>app/Http/Controllers/TaskController.php</i>
+				</b>and<b>
+					<i>resources/views/task/</i>
+				</b>.</p>
+		</section>
+	</div>
+{% endblock %}
