@@ -8,7 +8,9 @@
         "php-framework"
     ],
     "license": "proprietary",
-    "require": {},
+    "require": {
+        "twig/twig": "^3.3"
+    },
     "require-dev": {
         "phpunit/phpunit": "^9.5"
     },
