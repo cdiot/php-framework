@@ -13,7 +13,7 @@ $dotenv->load();
 $router = new Router($_GET['url']);
 
 try {
-    // $router->get(new Route('/', ['controller' => 'App\Http\Controllers\HomeController@index']));
+    $router->get(new Route('/', ['controller' => 'App\Http\Controllers\HomeController@index']));
     $router->getRoutes();
 } catch (RouteNotFoundException $e) {
     return $e->error404();

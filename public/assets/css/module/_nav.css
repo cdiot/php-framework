@@ -1,0 +1,34 @@
+/* 
+Author : Chris ;
+Theme : PHPFramework ;
+Description : Module nav (method SMACSS) ; 
+Tags : Framework, PHP ;
+*/
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+}
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    column-gap: 0.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-color);
+}
+.navbar-nav {
+    display: flex;
+}
+.navbar-nav li a {
+    padding: 8px 17px;
+    color: var(--text-color);
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+.navbar-nav li a:hover {
+    color: var(--main-color);
+}

@@ -1,0 +1,48 @@
+/* 
+Author : Chris ;
+Theme : PHPFramework ;
+Description : Module card (method SMACSS) ; 
+Tags : Framework, PHP ;
+*/
+
+.card {
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: 0.25rem;
+}
+.card-body {
+    padding: 1rem 1rem;
+}
+.card-body h2 {
+    font-size: 1.25rem;
+}
+.card-body p,small {
+    color: var(--text-color);
+}
+.card-body a {
+    color: #0d6efd;
+    text-decoration: underline;
+    font-weight: 500;
+}
+.card-body a:hover {
+    color: var(--main-color);
+}
+.card>.list-group {
+    border-top: inherit;
+    border-bottom: inherit;
+}
+.list-group {
+    padding-left: 0;
+    margin-bottom: 0;
+    border-radius: 0.25rem;
+}
+.list-group>.list-group-item {
+    border-width: 0 0 1px;
+}
+.list-group-item {
+    padding: 0.5rem 1rem;
+    color: var(--text-color);
+    text-decoration: none;
+    background-color: var(--bg-color);
+    border: 1px solid rgba(0,0,0,.125);
+}
+

@@ -1,0 +1,16 @@
+/* 
+Author : Chris ;
+Theme : PHPFramework ;
+Description : Default css file ;
+Tags : Framework, PHP ;
+*/
+
+@import "_base.css";
+@import "_template.css";
+@import "module/_btn.css";
+@import "module/_card.css";
+@import "module/_flex.css";
+@import "module/_form.css";
+@import "module/_grid.css";
+@import "module/_nav.css";
+@import "module/_spacing.css";

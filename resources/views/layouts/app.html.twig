@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>
+			{% block title %}
+				- PHPFramework | OFFICIAL SITE
+			{% endblock %}
+		</title>
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="../public/assets/css/app.css"/>
+	</head>
+	<header>
+		<div class="navbar container">
+			<p class="navbar-brand">PHPFramework</p>
+			<nav>
+				<ul class="navbar-nav">
+					<li>
+						<a href="#">Homepage</a>
+					</li>
+					{% if auth %}
+						<li>
+							<a href="/tasks">Task</a>
+						</li>
+						<li>
+							<a href="/logout">Logout</a>
+						</li>
+					{% else %}
+						<li>
+							<a href="/login">Login</a>
+						</li>
+						<li>
+							<a href="/register">Registration</a>
+						</li>
+					{% endif %}
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<main>
+		<div class="container">
+			<div class="row justify-content-center"> {% block content %}{% endblock %}
+				</div>
+			</div>
+		</main>
+		<footer>
+			<!-- Copyright -->
+			<p class="copyright">© PHPFramework All Right Reserved</p>
+			<!-- Copyright -->
+		</footer>
+		{% block script %}{% endblock %}
+	</html>
