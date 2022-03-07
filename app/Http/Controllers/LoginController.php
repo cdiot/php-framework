@@ -15,7 +15,7 @@ namespace App\Http\Controllers;
 use App\Repositories\UserRepository;
 
 /**
- * LoginController
+ * LoginController handles authentication
  * 
  * @category Controllers
  * @package  app/Controllers
@@ -42,7 +42,7 @@ final class LoginController extends AbstractController
             if ($user) {
                 $_SESSION['auth'] =  $user->getEmail();
                 $_SESSION['userId'] = $user->getId();
-                header("Location: /meetings");
+                header("Location: /tasks");
             }
         }
     }
@@ -54,7 +54,7 @@ final class LoginController extends AbstractController
      */
     public function displayAuthenticateForm()
     {
-        return $this->view('auth/index');
+        return $this->view('auth/login');
     }
 
     /**
