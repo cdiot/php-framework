@@ -1,33 +1,33 @@
 <?php
 
 /**
- * This file is part of the Manager.
+ * This file is part of the Repositories.
  * 
  * PHP version 8.1
  * 
- * @category Manager
- * @package  app/Manager
+ * @category Repositories
+ * @package  app/Repositories
  * @link     https://github.com/cdiot/php-framework
  */
 
-namespace App\Manager;
+namespace App\Repositories;
 
 use Database\MySqlConnection;
 
 /**
- * AbstractManager
+ * AbstractRepository
  * 
- * @category Manager
- * @package  app/Manager
+ * @category Repositories
+ * @package  app/Repositories
  * @link     https://github.com/cdiot/php-framework
  */
-abstract class AbstractManager
+abstract class AbstractRepository
 {
 
     protected $database;
 
     /**
-     * AbstractManager constructor.
+     * AbstractRepository constructor.
      */
     public function __construct()
     {
