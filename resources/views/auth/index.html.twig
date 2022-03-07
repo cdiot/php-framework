@@ -1,0 +1,42 @@
+{% extends 'layouts/app.html.twig' %}
+
+{% block title %}To log in {{ parent() }}
+{% endblock %}
+
+{% block content %}
+	<div class="col-6">
+		<section>
+			<h1 class="d-flex justify-content-center">Login</h1>
+			<!-- Form -->
+			<form
+				method="POST" action="/login">
+				<!-- Email input -->
+				<div class="mb-3">
+					<label for="email" class="form-label">Email address</label>
+					<input type="email" name="email" class="form-control" id="email" required="required"/>
+				</div>
+				<!-- Email input -->
+				<!-- Password input -->
+				<div class="mb-3">
+					<label for="password" class="form-label">Password</label>
+					<input type="password" name="password" class="form-control" id="password" required="required"/>
+				</div>
+				<!-- Password input -->
+				<!-- Submit button -->
+				<input
+				type="submit" value="To log in"/>
+			<!-- Submit button -->
+			</form>
+			<!-- Form -->
+			<hr>
+			<!-- Register link -->
+			<h2>First visit</h2>
+			<div>
+				<p>New user ?
+					<a href="/register">Create an account now</a>
+				</p>
+			</div>
+			<!-- Register link -->
+		</section>
+	</div>
+{% endblock %}
