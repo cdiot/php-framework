@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require "../vendor/autoload.php";
 
 use App\Phpdotenv\DotEnv;
@@ -18,6 +18,10 @@ try {
     $router->post(new Route('/login', ['controller' => 'App\Http\Controllers\LoginController@authenticate']));
     $router->get(new Route('/register', ['controller' => 'App\Http\Controllers\RegisterController@displayRegisterForm']));
     $router->post(new Route('/register', ['controller' => 'App\Http\Controllers\RegisterController@register']));
+    $router->get(new Route('/tasks', ['controller' => 'App\Http\Controllers\TaskController@index', 'middleware' => 'Authenticate']));
+    $router->get(new Route('/task/:id', ['controller' => 'App\Http\Controllers\TaskController@show', 'middleware' => 'Authenticate'], ['id', '[0-9]+']));
+    $router->get(new Route('/add/task', ['controller' => 'App\Http\Controllers\TaskController@create', 'middleware' => 'Authenticate']));
+    $router->post(new Route('/add/task', ['controller' => 'App\Http\Controllers\TaskController@store', 'middleware' => 'Authenticate']));
     $router->getRoutes();
 } catch (RouteNotFoundException $e) {
     return $e->error404();
