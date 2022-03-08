@@ -1,0 +1,23 @@
+{% extends 'layouts/app.html.twig' %}
+
+{% block title %}Tasks {{ parent() }}
+{% endblock %}
+
+{% block content %}
+	<div class="col">
+		<section>
+			<h1>Overview of tasks</h1>
+			<div class="row">
+				{% for task in tasks %}
+					<div class="card mb-3 me-3" style="width: 22rem;">
+						<div class="card-body">
+							<h2>{{ task.getTitle() }}</h2>
+							<p>{{ task.getContent() }}</p>
+							<a href="/task/{{ task.getId() }}" class="btn">See the details</a>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		</section>
+	</div>
+{% endblock %}

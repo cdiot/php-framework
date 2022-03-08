@@ -1,0 +1,33 @@
+{% extends 'layouts/app.html.twig' %}
+
+{% block title %}Add a task {{ parent() }}
+{% endblock %}
+
+{% block content %}
+	<div class="col-6">
+		<section>
+			<!-- Form -->
+			<form method="POST" action="/add/task">
+				<h1 class="d-flex justify-content-center">Create a task</h1>
+				<!-- Title input -->
+				<div class="mb-3">
+					<label for="title" class="form-label">Title</label>
+					<input type="text" name="title" placeholder="Enter title" class="form-control" id="title" required="required"/>
+				</div>
+				<!-- Title input -->
+				<!-- Content input -->
+				<div class="mb-3">
+					<label for="content" class="form-label">Content</label>
+					<textarea id="content" name="content" placeholder="Enter content" class="form-control" rows="5" cols="33" required="required"></textarea>
+				</div>
+				<!-- Content input -->
+
+				<!-- Submit button -->
+				<input
+				type="submit" class="btn btn-primary" value="Confirm"/>
+			<!-- Submit button -->
+			</form>
+			<!-- Form -->
+		</section>
+	</div>
+{% endblock %}
