@@ -10,9 +10,9 @@
  * @link     https://github.com/cdiot/php-framework
  */
 
-namespace Routing;
+namespace App\Routing;
 
-use Routing\Route;
+use App\Routing\Route;
 
 /**
  * RouterInterface is the interface that all Router classes must implement.
@@ -29,5 +29,5 @@ interface RouterInterface
      * @return array|Route[] Returns a route instance.
      * @throws RouteNotFoundException If the requested page cannot be found.
      */
-    public function getRoutes(): Route;
+    public static function getRoutes(): Route;
 }
