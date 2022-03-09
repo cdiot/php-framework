@@ -20,7 +20,6 @@ For each environment, it will be necessary to create a local file containing the
 The current environment is `local` and we use `mysql` by default for the DBMS.
 
 *   `APP_ENV` e.g. local
-*   `SITE_NAME` e.g. phpframework
 *   `DB_CONNECTION` e.g. mysql
 *   `DB_HOST` e.g. 127.0.0.1
 *   `DB_PORT` e.g. 3306
