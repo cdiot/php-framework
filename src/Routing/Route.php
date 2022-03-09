@@ -6,17 +6,17 @@
  * PHP version 8.1
  * 
  * @category Routing
- * @package  Routing
+ * @package  src/Routing
  * @link     https://github.com/cdiot/php-framework
  */
 
-namespace App\Routing;
+namespace Src\Routing;
 
 /**
  * A Route describes a route and its parameters.
  * 
  * @category Routing
- * @package  Routing
+ * @package  src/Routing
  * @link     https://github.com/cdiot/php-framework
  */
 class Route

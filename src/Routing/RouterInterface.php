@@ -6,19 +6,19 @@
  * PHP version 8.1
  * 
  * @category Routing
- * @package  Routing
+ * @package  src/Routing
  * @link     https://github.com/cdiot/php-framework
  */
 
-namespace App\Routing;
+namespace Src\Routing;
 
-use App\Routing\Route;
+use Src\Routing\Route;
 
 /**
  * RouterInterface is the interface that all Router classes must implement.
  * 
  * @category Routing
- * @package  Routing
+ * @package  src/Routing
  * @link     https://github.com/cdiot/php-framework
  */
 interface RouterInterface

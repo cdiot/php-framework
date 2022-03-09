@@ -6,11 +6,11 @@
  * PHP version 8.1
  * 
  * @category Routing
- * @package  Routing/Exception
+ * @package  src/Routing/Exception
  * @link     https://github.com/cdiot/php-framework
  */
 
-namespace App\Routing\Exception;
+namespace Src\Routing\Exception;
 
 use Exception;
 use Throwable;
@@ -21,7 +21,7 @@ use Throwable;
  * This exception should trigger an HTTP 404 response in your application code.
  * 
  * @category Routing
- * @package  Routing/Exception
+ * @package  src/Routing/Exception
  * @link     https://github.com/cdiot/php-framework
  */
 class RouteNotFoundException extends Exception
