@@ -2,7 +2,7 @@
 session_start();
 require "../vendor/autoload.php";
 
-use App\Phpdotenv\DotEnv;
+use Src\Phpdotenv\DotEnv;
 use Src\Routing\Exception\RouteNotFoundException;
 use Src\Routing\Router;
 
