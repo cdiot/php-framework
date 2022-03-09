@@ -17,20 +17,20 @@ use PDOException;
 use LogicException;
 
 /**
- * MySqlConnection
+ * PdoConnection
  * 
  * @category Database
  * @package  database
  * @link     https://github.com/cdiot/php-framework
  */
-final class MySqlConnection  implements ConnectionInterface
+final class PdoConnection  implements ConnectionInterface
 {
 
     private $_pdo;
     private static $_instance = null;
 
     /**
-     * DBConnection constructor.
+     * PdoConnection constructor.
      */
     private function __construct()
     {
