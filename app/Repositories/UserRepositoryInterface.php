@@ -12,18 +12,20 @@
 
 namespace App\Repositories;
 
+use App\Entities\User;
+
 /**
- * RepositoryInterface.
+ * UserRepositoryInterface.
  * 
  * @category Repositories
  * @package  app/Repositories
  * @link     https://github.com/cdiot/php-framework
  */
-interface RepositoryInterface
+interface UserRepositoryInterface
 {
     public function getAll();
     public function getById(int $id);
-    public function create(object $entity);
-    public function update(object $entity);
+    public function create(User $user);
+    public function update(User $user);
     public function delete(int $id);
 }
