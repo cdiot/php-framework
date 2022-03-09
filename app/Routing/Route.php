@@ -1,7 +1,7 @@
 <?php
 
 /**
- * This file is part of the Route system.
+ * This file is part of the Routing system.
  * 
  * PHP version 8.1
  * 
@@ -10,7 +10,7 @@
  * @link     https://github.com/cdiot/php-framework
  */
 
-namespace Routing;
+namespace App\Routing;
 
 /**
  * A Route describes a route and its parameters.

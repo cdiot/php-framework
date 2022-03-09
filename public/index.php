@@ -4,8 +4,8 @@ require "../vendor/autoload.php";
 
 use App\Phpdotenv\DotEnv;
 use Routing\Exception\RouteNotFoundException;
-use Routing\Router;
-use Routing\Route;
+use App\Routing\Router;
+use App\Routing\Route;
 
 $dotenv = new DotEnv('../.env');
 $dotenv->load();

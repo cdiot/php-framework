@@ -10,9 +10,9 @@
  * @link     https://github.com/cdiot/php-framework
  */
 
-namespace Routing;
+namespace App\Routing;
 
-use Routing\Route;
+use App\Routing\Route;
 
 /**
  * RouterInterface is the interface that all Router classes must implement.

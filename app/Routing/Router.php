@@ -10,10 +10,10 @@
  * @link     https://github.com/cdiot/php-framework
  */
 
-namespace Routing;
+namespace App\Routing;
 
-use Routing\Route;
-use Routing\Exception\RouteNotFoundException;
+use App\Routing\Route;
+use App\Routing\Exception\RouteNotFoundException;
 use InvalidArgumentException;
 
 /**
