@@ -12,7 +12,7 @@
 
 namespace App\Repositories;
 
-use Database\MySqlConnection;
+use Database\PdoConnection;
 
 /**
  * AbstractRepository
@@ -31,6 +31,6 @@ abstract class AbstractRepository
      */
     public function __construct()
     {
-        $this->database = MysqlConnection::getInstance();
+        $this->database = PdoConnection::getInstance();
     }
 }
