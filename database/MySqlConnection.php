@@ -35,7 +35,7 @@ final class MySqlConnection  implements ConnectionInterface
     private function __construct()
     {
         try {
-            $this->_pdo = new PDO($_ENV['DATABASE_DNS'], $_ENV['DATABASE_USER'], $_ENV['DATABASE_PASSWORD']);
+            $this->_pdo = new PDO($_ENV['DB_CONNECTION'] . ':host=' . $_ENV['DB_HOST'] . '; port=' . $_ENV['DB_PORT']  . '; dbname=' . $_ENV['DB_DATABASE'], $_ENV['DB_USERNAME'], $_ENV['DB_PASSWORD']);
             $this->_pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_SILENT);
         } catch (PDOException $error) {
             return $error->getMessage();
