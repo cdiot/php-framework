@@ -22,7 +22,7 @@ use PDO;
  * @package  app/Repositories
  * @link     https://github.com/cdiot/php-framework
  */
-class UserRepository extends AbstractRepository implements RepositoryInterface
+class UserRepository extends AbstractRepository implements UserRepositoryInterface
 {
     /**
      * GetAll

@@ -15,6 +15,7 @@ git clone https://github.com/cdiot/php-framework.git
 
 *   PHP >= 8.0
 *   Enable URL rewriting on your web server
+*   VirtualHost
 *   Composer
 
 ## Install dependencies
@@ -29,7 +30,11 @@ composer install
 
 To make the project work on your machine, remember to configure the environment. A documentation on this subject is present [here](2_environnements.md).
 
-## Initialize the databases
+## Initialize the database
 
-Configure the database by copying the last migrations file available [here](../tree/main/database/migrations/) to your DBMS.
+Configure the database by copying the last migrations file available [here](../database/migrations/) to your DBMS.
+
+## Configure the routes
+
+Routes are defined in route files, which are located in the [routes](../routes/web.php) directory. These files are automatically loaded. The routes defined in routes/web.php may be accessed by entering the defined route's URL in your browser.
 

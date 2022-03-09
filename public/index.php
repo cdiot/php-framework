@@ -2,9 +2,9 @@
 session_start();
 require "../vendor/autoload.php";
 
-use App\Phpdotenv\DotEnv;
-use Routing\Exception\RouteNotFoundException;
-use App\Routing\Router;
+use Src\Phpdotenv\DotEnv;
+use Src\Routing\Exception\RouteNotFoundException;
+use Src\Routing\Router;
 
 $dotenv = new DotEnv('../.env');
 $dotenv->load();

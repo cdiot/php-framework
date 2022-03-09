@@ -10,7 +10,7 @@
 |
 */
 
-use App\Routing\Router;
+use Src\Routing\Router;
 
 Router::get('/', ['controller' => 'App\Http\Controllers\HomeController@index']);
 Router::get('/login', ['controller' => 'App\Http\Controllers\LoginController@displayAuthenticateForm']);

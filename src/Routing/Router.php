@@ -6,21 +6,21 @@
  * PHP version 8.1
  * 
  * @category Routing
- * @package  Routing
+ * @package  src/Routing
  * @link     https://github.com/cdiot/php-framework
  */
 
-namespace App\Routing;
+namespace Src\Routing;
 
-use App\Routing\Route;
-use App\Routing\Exception\RouteNotFoundException;
+use Src\Routing\Route;
+use Src\Routing\Exception\RouteNotFoundException;
 use InvalidArgumentException;
 
 /**
  * The Router class integrates all the elements of the routing system for easier use. 
  * 
  * @category Routing
- * @package  Routing
+ * @package  src/Routing
  * @link     https://github.com/cdiot/php-framework
  */
 class Router implements RouterInterface

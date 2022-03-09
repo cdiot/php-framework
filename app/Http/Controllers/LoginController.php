@@ -21,7 +21,7 @@ use App\Repositories\UserRepository;
  * @package  app/Controllers
  * @link     https://github.com/cdiot/php-framework
  */
-final class LoginController extends AbstractController
+final class LoginController extends Controller
 {
     /**
      * Allow to login

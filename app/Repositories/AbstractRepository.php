@@ -12,7 +12,7 @@
 
 namespace App\Repositories;
 
-use Database\PdoConnection;
+use Src\Database\PdoConnection;
 
 /**
  * AbstractRepository

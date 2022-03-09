@@ -1,7 +1,7 @@
 <?php
 
 /**
- * This file is part of the Controllers.
+ * This file is the base of the Controllers.
  * 
  * PHP version 8.1
  * 
@@ -16,13 +16,13 @@ use Twig\Loader\FilesystemLoader;
 use Twig\Environment;
 
 /**
- * AbstractController
+ * Controller
  * 
  * @category Controllers
  * @package  app/Http/Controllers
  * @link     https://github.com/cdiot/php-framework
  */
-abstract class AbstractController
+abstract class Controller
 {
 
     /**

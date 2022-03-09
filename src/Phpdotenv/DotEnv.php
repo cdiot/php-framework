@@ -6,17 +6,17 @@
  * PHP version 8.1
  * 
  * @category DotEnv
- * @package  app/Phpdotenv
+ * @package  src/Phpdotenv
  * @link     https://github.com/cdiot/php-framework
  */
 
-namespace App\Phpdotenv;
+namespace Src\Phpdotenv;
 
 /**
  * Loads environment variables
  * 
  * @category DotEnv
- * @package  app/Phpdotenv
+ * @package  src/Phpdotenv
  * @link     https://github.com/cdiot/php-framework
  */
 class DotEnv
