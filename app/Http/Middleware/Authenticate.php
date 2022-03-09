@@ -12,7 +12,7 @@
 
 namespace App\Http\Middleware;
 
-use App\Routing\Exception\RouteNotFoundException;
+use Src\Routing\Exception\RouteNotFoundException;
 
 /**
  * Authenticate

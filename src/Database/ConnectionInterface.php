@@ -6,17 +6,17 @@
  * PHP version 8.1
  * 
  * @category Database
- * @package  database
+ * @package  src/database
  * @link     https://github.com/cdiot/php-framework
  */
 
-namespace Database;
+namespace Src\Database;
 
 /**
  * ConnectionInterface
  * 
  * @category Database
- * @package  database
+ * @package  src/database
  * @link     https://github.com/cdiot/php-framework
  */
 interface ConnectionInterface

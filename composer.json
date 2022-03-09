@@ -20,8 +20,7 @@
     "autoload": {
         "psr-4": {
             "App\\": "app/",
-            "Src\\": "src/",
-            "Database\\": "database/"
+            "Src\\": "src/"
         },
         "files": [
             "routes/web.php"
