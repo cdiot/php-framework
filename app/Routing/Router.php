@@ -30,93 +30,122 @@ class Router implements RouterInterface
      * 
      * @var Route[]
      */
-    private $_routes = [];
+    private static $_routes = [];
+
+    /**
+     * The current url.
+     * 
+     * @var string
+     */
+    private static $_url;
 
     /**
      * Router constructor.
      * 
      * @param string $url The currently dispatched url. 
      */
-    public function __construct(private string $url)
+    public function __construct(string $url)
     {
-        $this->_url = $url;
+        self::$_url = $url;
     }
 
     /**
-     * Add Route to GET.
+     * Register a new GET route with the router.
      * 
-     * @param Route $route Route instance.
+     * @param  string  $uri
+     * @param  array   $action
+     * @param  ?array  $wheres
      * 
-     * @return $this Returns a route instance.
+     * @return Route Returns a route instance.
      */
-    public function get(Route $route): self
+    public static function get(string $uri, array $action, ?array $wheres = []): Route
     {
-        $this->_routes['GET'][] = $route;
-        return $this;
+        return self::addRoute('GET', $uri, $action, $wheres);
     }
 
     /**
-     * Add Route to POST.
+     * Register a new POST route with the router.
      * 
-     * @param Route $route Route instance.
+     * @param  string  $uri
+     * @param  array   $action
+     * @param  ?array  $wheres
      * 
-     * @return $this Returns a route instance.
+     * @return Route Returns a route instance.
      */
-    public function post(Route $route): self
+    public static function post(string $uri, array $action, ?array $wheres = []): Route
     {
-        $this->_routes['POST'][] = $route;
-        return $this;
+        return self::addRoute('POST', $uri, $action, $wheres);
     }
 
     /**
-     * Add Route to PUT.  
+     * Register a new PUT route with the router. 
      * 
-     * @param Route $route Route instance.
+     * @param  string  $uri
+     * @param  array   $action
+     * @param  ?array  $wheres
      * 
-     * @return $this Returns a route instance.
+     * @return Route Returns a route instance.
      */
-    public function put(Route $route): self
+    public static function put(string $uri, array $action, ?array $wheres = []): Route
     {
-        $this->_routes['PUT'][] = $route;
-        return $this;
+        return self::addRoute('PUT', $uri, $action, $wheres);
     }
 
     /**
-     * Add Route to DELETE. 
+     * Register a new PATCH route with the router.  
      * 
-     * @param Route $route Route instance.
+     * @param  string  $uri
+     * @param  array   $action
+     * @param  ?array  $wheres
      * 
-     * @return $this Returns a route instance.
+     * @return Route Returns a route instance.
      */
-    public function delete(Route $route): self
+    public static function patch(string $uri, array $action, ?array $wheres = []): Route
     {
-        $this->_routes['DELETE'][] = $route;
-        return $this;
+        return self::addRoute('PATCH', $uri, $action, $wheres);
     }
 
     /**
-     * Add Route to PATCH.  
+     * Register a new DELETE route with the router.
      * 
-     * @param Route $route Route instance.
+     * @param  string  $uri
+     * @param  array   $action
+     * @param  ?array  $wheres
      * 
-     * @return $this Returns a route instance.
+     * @return Route Returns a route instance.
      */
-    public function patch(Route $route): self
+    public static function delete(string $uri, array $action, ?array $wheres = []): Route
     {
-        $this->_routes['PATCH'][] = $route;
-        return $this;
+        return self::addRoute('DELETE', $uri, $action, $wheres);
+    }
+
+    /**
+     * Add a route to the underlying route collection. 
+     * 
+     * @param  string  $method
+     * @param  string  $uri
+     * @param  array   $action
+     * @param  ?array  $wheres
+     * 
+     * @return Route Returns a route instance.
+     */
+    private static function addRoute($method, $uri, $action, $wheres): Route
+    {
+        $route = new Route($uri, $action, $wheres);
+        self::$_routes[$method][] = $route;
+        return $route;
     }
 
     /**
      * {@inheritdoc}
      */
-    public function getRoutes(): Route
+    public static function getRoutes(): Route
     {
-        if (!isset($this->_routes[$_SERVER['REQUEST_METHOD']])) {
+        if (!isset(self::$_routes[$_SERVER['REQUEST_METHOD']])) {
             throw new InvalidArgumentException('REQUEST_METHOD does not exist');
         }
-        foreach ($this->_routes[$_SERVER['REQUEST_METHOD']] as $route) {
-            if ($route->matches($this->_url)) {
+        foreach (self::$_routes[$_SERVER['REQUEST_METHOD']] as $route) {
+            if ($route->matches(self::$_url)) {
                 $route->compileRoute();
                 return $route;
             }

@@ -5,7 +5,6 @@ require "../vendor/autoload.php";
 use App\Phpdotenv\DotEnv;
 use Routing\Exception\RouteNotFoundException;
 use App\Routing\Router;
-use App\Routing\Route;
 
 $dotenv = new DotEnv('../.env');
 $dotenv->load();
@@ -13,16 +12,16 @@ $dotenv->load();
 $router = new Router($_GET['url']);
 
 try {
-    $router->get(new Route('/', ['controller' => 'App\Http\Controllers\HomeController@index']));
-    $router->get(new Route('/login', ['controller' => 'App\Http\Controllers\LoginController@displayAuthenticateForm']));
-    $router->post(new Route('/login', ['controller' => 'App\Http\Controllers\LoginController@authenticate']));
-    $router->get(new Route('/register', ['controller' => 'App\Http\Controllers\RegisterController@displayRegisterForm']));
-    $router->post(new Route('/register', ['controller' => 'App\Http\Controllers\RegisterController@register']));
-    $router->get(new Route('/tasks', ['controller' => 'App\Http\Controllers\TaskController@index', 'middleware' => 'Authenticate']));
-    $router->get(new Route('/task/:id', ['controller' => 'App\Http\Controllers\TaskController@show', 'middleware' => 'Authenticate'], ['id', '[0-9]+']));
-    $router->get(new Route('/add/task', ['controller' => 'App\Http\Controllers\TaskController@create', 'middleware' => 'Authenticate']));
-    $router->post(new Route('/add/task', ['controller' => 'App\Http\Controllers\TaskController@store', 'middleware' => 'Authenticate']));
-    $router->getRoutes();
+    Router::get('/', ['controller' => 'App\Http\Controllers\HomeController@index']);
+    Router::get('/login', ['controller' => 'App\Http\Controllers\LoginController@displayAuthenticateForm']);
+    Router::post('/login', ['controller' => 'App\Http\Controllers\LoginController@authenticate']);
+    Router::get('/register', ['controller' => 'App\Http\Controllers\RegisterController@displayRegisterForm']);
+    Router::post('/register', ['controller' => 'App\Http\Controllers\RegisterController@register']);
+    Router::get('/tasks', ['controller' => 'App\Http\Controllers\TaskController@index', 'middleware' => 'Authenticate']);
+    Router::get('/task/:id', ['controller' => 'App\Http\Controllers\TaskController@show', 'middleware' => 'Authenticate'], ['id', '[0-9]+']);
+    Router::get('/add/task', ['controller' => 'App\Http\Controllers\TaskController@create', 'middleware' => 'Authenticate']);
+    Router::post('/add/task', ['controller' => 'App\Http\Controllers\TaskController@store', 'middleware' => 'Authenticate']);
+    Router::getRoutes();
 } catch (RouteNotFoundException $e) {
     return $e->error404();
 } catch (\Exception $e) {

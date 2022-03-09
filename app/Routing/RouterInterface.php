@@ -29,5 +29,5 @@ interface RouterInterface
      * @return array|Route[] Returns a route instance.
      * @throws RouteNotFoundException If the requested page cannot be found.
      */
-    public function getRoutes(): Route;
+    public static function getRoutes(): Route;
 }

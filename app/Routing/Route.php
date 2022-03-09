@@ -29,6 +29,13 @@ class Route
     public $_matches = [];
 
     /**
+     * the middleware for the given route.
+     * 
+     * @var array
+     */
+    public $_middleware = [];
+
+    /**
      * Route constructor.
      * 
      * @param string         $uri    The URI pattern the route responds to.
