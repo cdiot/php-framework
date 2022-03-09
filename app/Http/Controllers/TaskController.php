@@ -22,7 +22,7 @@ use App\Repositories\TaskRepository;
  * @package  app/Controllers
  * @link     https://github.com/cdiot/php-framework
  */
-class TaskController extends AbstractController
+class TaskController extends Controller
 {
     private $_taskRepository;
 

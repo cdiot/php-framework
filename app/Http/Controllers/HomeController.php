@@ -19,7 +19,7 @@ namespace App\Http\Controllers;
  * @package  app/Http/Controllers
  * @link     https://github.com/cdiot/php-framework
  */
-class HomeController extends AbstractController
+class HomeController extends Controller
 {
     /**
      * Show the homepage

@@ -22,7 +22,7 @@ use App\Entities\User;
  * @package  app/Controllers
  * @link     https://github.com/cdiot/php-framework
  */
-class RegisterController extends AbstractController
+class RegisterController extends Controller
 {
     /**
      * Allow to register
